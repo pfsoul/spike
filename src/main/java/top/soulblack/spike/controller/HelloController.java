@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.soulblack.spike.common.Result;
 import top.soulblack.spike.entity.User;
+import top.soulblack.spike.redis.RedisService;
+import top.soulblack.spike.redis.key.UserKey;
 import top.soulblack.spike.service.UserService;
 
 
@@ -23,6 +25,9 @@ public class HelloController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RedisService redisService;
 
     @RequestMapping("/index")
     public String index(Model model) {
@@ -45,5 +50,24 @@ public class HelloController {
     public Result<Boolean> getTX() {
         userService.tx();
         return Result.success(true);
+    }
+
+    /**
+     * 测试redis
+     */
+    @RequestMapping("/redisGet")
+    @ResponseBody
+    public Result<String> redisGet() {
+        String str = redisService.get(UserKey.getById,""+1,String.class);
+        return Result.success(str);
+    }
+
+    @RequestMapping("/redisSet")
+    @ResponseBody
+    public Result<Boolean> redisSet() {
+        User user = new User();
+        user.setId(1); user.setName("soulblack");
+        boolean ret = redisService.set(UserKey.getById,""+1,user);
+        return Result.success(ret);
     }
 }
