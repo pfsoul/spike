@@ -1,4 +1,4 @@
-package top.soulblack.spike.entity;
+package top.soulblack.spike.model;
 
 import org.springframework.stereotype.Component;
 

@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.soulblack.spike.common.Result;
-import top.soulblack.spike.entity.User;
+import top.soulblack.spike.model.User;
 import top.soulblack.spike.redis.RedisService;
 import top.soulblack.spike.redis.key.UserKey;
 import top.soulblack.spike.service.UserService;
