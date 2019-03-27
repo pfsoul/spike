@@ -2,12 +2,19 @@ package top.soulblack.spike.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 import top.soulblack.spike.common.CodeMsg;
 import top.soulblack.spike.common.exception.GlobalException;
 import top.soulblack.spike.mapper.SpikeUserMapper;
 import top.soulblack.spike.model.SpikeUser;
 import top.soulblack.spike.model.vo.LoginVo;
+import top.soulblack.spike.redis.RedisService;
+import top.soulblack.spike.redis.key.SpikeUserKey;
 import top.soulblack.spike.util.MD5Util;
+import top.soulblack.spike.util.UUIDUtil;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Author: 廉雪峰
@@ -17,14 +24,19 @@ import top.soulblack.spike.util.MD5Util;
 @Service
 public class SpikeUserService {
 
+    public static final String COOKIE_NAME_TOKEN = "token";
+
     @Autowired
     private SpikeUserMapper spikeUserMapper;
+
+    @Autowired
+    private RedisService redisService;
 
     public SpikeUser getById(Long id) {
         return spikeUserMapper.getById(id);
     }
 
-    public boolean login(LoginVo loginVo) {
+    public boolean login(HttpServletResponse response, LoginVo loginVo) {
         if (loginVo == null) {
             throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);
         }
@@ -42,7 +54,41 @@ public class SpikeUserService {
         if (!dbPassword.equals(password)) {
             throw new GlobalException(CodeMsg.PASSWORD_ERROR);
         }
+        addCookie(response,user);
         return true;
 
+    }
+
+    /**
+     * 从redis获取用户信息
+     * @param response
+     * @param token
+     * @return
+     */
+    public SpikeUser getByToken(HttpServletResponse response,String token) {
+        if (StringUtils.isEmpty(token)) {
+            return null;
+        }
+        SpikeUser user = redisService.get(SpikeUserKey.token, token, SpikeUser.class);
+        if(user == null)
+            return null;
+        // 延长有效期
+        addCookie(response, user);
+        return user;
+    }
+
+    /**
+     * 增加分布式session
+     * @param response
+     * @param user
+     */
+    private void addCookie(HttpServletResponse response, SpikeUser user) {
+        // 生成一个cookie
+        String token = UUIDUtil.uuid();
+        redisService.set(SpikeUserKey.token, token, user);
+        Cookie cookie = new Cookie(COOKIE_NAME_TOKEN, token);
+        cookie.setMaxAge(SpikeUserKey.token.expireSeconds());
+        cookie.setPath("/");
+        response.addCookie(cookie);
     }
 }

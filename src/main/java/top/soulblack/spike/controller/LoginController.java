@@ -12,6 +12,7 @@ import top.soulblack.spike.model.vo.LoginVo;
 import top.soulblack.spike.service.SpikeUserService;
 import top.soulblack.spike.util.ValidatorUtil;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 
@@ -36,10 +37,10 @@ public class LoginController {
 
     @RequestMapping("/do_login")
     @ResponseBody
-    public Result<Boolean> doLogin(@Valid LoginVo loginVo) {
+    public Result<Boolean> doLogin(HttpServletResponse response, @Valid LoginVo loginVo) {
         log.info(loginVo.toString());
         // 登录
-        spikeUserService.login(loginVo);
+        spikeUserService.login(response, loginVo);
         return Result.success(true);
     }
 }
