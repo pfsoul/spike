@@ -54,7 +54,9 @@ public class SpikeUserService {
         if (!dbPassword.equals(password)) {
             throw new GlobalException(CodeMsg.PASSWORD_ERROR);
         }
-        addCookie(response,user);
+        // 生成一个cookie
+        String token = UUIDUtil.uuid();
+        addCookie(response,token, user);
         return true;
 
     }
@@ -73,7 +75,8 @@ public class SpikeUserService {
         if(user == null)
             return null;
         // 延长有效期
-        addCookie(response, user);
+        // 生成一个cookie
+        addCookie(response,token, user);
         return user;
     }
 
@@ -82,9 +85,7 @@ public class SpikeUserService {
      * @param response
      * @param user
      */
-    private void addCookie(HttpServletResponse response, SpikeUser user) {
-        // 生成一个cookie
-        String token = UUIDUtil.uuid();
+    private void addCookie(HttpServletResponse response,String token, SpikeUser user) {
         redisService.set(SpikeUserKey.token, token, user);
         Cookie cookie = new Cookie(COOKIE_NAME_TOKEN, token);
         cookie.setMaxAge(SpikeUserKey.token.expireSeconds());
