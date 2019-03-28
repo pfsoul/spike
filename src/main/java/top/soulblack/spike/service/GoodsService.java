@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.stylesheets.LinkStyle;
 import top.soulblack.spike.mapper.GoodsMapper;
+import top.soulblack.spike.model.Goods;
+import top.soulblack.spike.model.SpikeGoods;
 import top.soulblack.spike.model.vo.GoodsVo;
 
 import java.util.List;
@@ -18,9 +20,15 @@ import java.util.List;
 public class GoodsService {
 
     @Autowired
-    GoodsMapper goodsMapper;
+    private GoodsMapper goodsMapper;
 
     public List<GoodsVo> listGoodsVo() {
         return goodsMapper.listGoodsVo();
     }
+
+    public GoodsVo getGoodsVoByGoodsId(long goodsId) {
+        return goodsMapper.getGoodsVoByGoodsId(goodsId);
+    }
+
+
 }

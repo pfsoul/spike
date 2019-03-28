@@ -28,16 +28,6 @@
     delete from order_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="spike.model.OrderInfo">
-    insert into order_info (id, user_id, goods_id, 
-      delivery_addr_id, goods_name, goods_count, 
-      goods_price, order_channel, status, 
-      create_date, pay_date)
-    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, 
-      #{deliveryAddrId,jdbcType=BIGINT}, #{goodsName,jdbcType=VARCHAR}, #{goodsCount,jdbcType=INTEGER}, 
-      #{goodsPrice,jdbcType=DECIMAL}, #{orderChannel,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
-      #{createDate,jdbcType=TIMESTAMP}, #{payDate,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="spike.model.OrderInfo">
     insert into order_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
