@@ -35,6 +35,10 @@ public class SpikeController {
     @Autowired
     SpikeService spikeService;
 
+    /*
+    qps 722.5
+    5000 * 10
+     */
     @RequestMapping("/do_spike")
     public String spike(Model model, SpikeUser user, @RequestParam("goodsId") long goodsId) {
         if (user == null) {
@@ -44,13 +48,14 @@ public class SpikeController {
         GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
         int stock = goods.getStockCount();
         if (stock <= 0) {
-            model.addAttribute("errmsg", CodeMsg.STOCK_EMPTY);
+            model.addAttribute("errmsg", CodeMsg.STOCK_EMPTY.getMsg());
             return "spike_fail";
         }
         // 判断是否已经秒杀到了
         SpikeOrder order = orderInfoService.getSpikeOrderByUserIdGoodsId(user.getId(), goodsId);
         if (order != null) {
-            model.addAttribute("errmsg", CodeMsg.REPEATE_SPIKE);
+            model.addAttribute("errmsg", CodeMsg.REPEATE_SPIKE.getMsg());
+            return "spike_fail";
         }
         // 减库存，下订单，写入秒杀订单
         OrderInfo orderInfo = spikeService.spike(user, goods);
@@ -59,13 +64,4 @@ public class SpikeController {
         return "order_detail";
     }
 
-    @RequestMapping("/spike_fail")
-    public String spikeFail() {
-        return "spike_fail";
-    }
-
-    @RequestMapping("/order_detail")
-    public String orderDetail() {
-        return "order_detail";
-    }
 }
