@@ -3,18 +3,20 @@ package top.soulblack.spike.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.context.WebContext;
+import org.thymeleaf.spring5.context.webflux.SpringWebFluxContext;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.util.StringUtils;
 import top.soulblack.spike.model.SpikeUser;
 import top.soulblack.spike.model.User;
 import top.soulblack.spike.model.vo.GoodsVo;
+import top.soulblack.spike.redis.RedisService;
+import top.soulblack.spike.redis.key.GoodsKey;
 import top.soulblack.spike.service.GoodsService;
 import top.soulblack.spike.service.SpikeUserService;
-import top.soulblack.spike.service.UserService;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
@@ -33,21 +35,49 @@ public class GoodsController {
     @Autowired
     GoodsService goodsService;
 
-    @RequestMapping("/to_list")
-    public String goodList(Model model, SpikeUser user) {
+    @Autowired
+    RedisService redisService;
+
+    @Autowired
+    ThymeleafViewResolver thymeleafViewResolver;
+
+    @RequestMapping(value = "/to_list", produces = "text/html")
+    @ResponseBody
+    // 页面缓存
+    public String goodList(HttpServletRequest request, HttpServletResponse response, Model model, SpikeUser user) {
         model.addAttribute("user", user);
         // 查询商品列表
         List<GoodsVo> goodsVoList = goodsService.listGoodsVo();
         model.addAttribute("goodsList", goodsVoList);
-        return "goods_list";
+        // 取缓存
+        String html = redisService.get(GoodsKey.getGoodList, "", String.class);
+        if (!StringUtils.isEmpty(html)) {
+            return html;
+        }
+        // Springboot 2.0  1.0使用SpringWebContext
+        WebContext webContext = new WebContext(request,response,request.getServletContext(),request.getLocale(),model.asMap());
+        // 手动渲染
+        html = thymeleafViewResolver.getTemplateEngine().process("goods_list", webContext);
+        if (!StringUtils.isEmpty(html)) {
+            // 保存到缓存中
+            redisService.set(GoodsKey.getGoodList, "", html);
+        }
+        return html;
+//        return "goods_list";
     }
 
-    @RequestMapping("/to_detail/{goodsId}")
-    public String detail(Model model, SpikeUser user, @PathVariable("goodsId") long goodsId) {
-        //snowflake 算法
-        if (user == null) {
-            return "login";
+    @RequestMapping(value = "/to_detail/{goodsId}", produces = "text/html")
+    @ResponseBody
+    public String detail(HttpServletRequest request, HttpServletResponse response,
+                         Model model, SpikeUser user, @PathVariable("goodsId") long goodsId) {
+        model.addAttribute("user", user);
+
+        // 取缓存
+        String html = redisService.get(GoodsKey.getGoodDetail, "" + goodsId, String.class);
+        if (!StringUtils.isEmpty(html)) {
+            return html;
         }
+        // 手动渲染
         GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
         long startAt = goods.getStartDate().getTime();
         long endAt = goods.getEndDate().getTime();
@@ -68,10 +98,19 @@ public class GoodsController {
             spikeStatus = 1;
             remainSeconds = 0;
         }
-        model.addAttribute("user", user);
+
         model.addAttribute("goods", goods);
         model.addAttribute("spikeStatus", spikeStatus);
         model.addAttribute("remainSeconds", remainSeconds);
-        return "goods_detail";
+
+        // Springboot 2.0  1.0使用SpringWebContext
+        WebContext webContext = new WebContext(request,response,request.getServletContext(),request.getLocale(),model.asMap());
+        // 手动渲染
+        html = thymeleafViewResolver.getTemplateEngine().process("goods_detail", webContext);
+        if (!StringUtils.isEmpty(html)) {
+            // 保存到缓存中
+            redisService.set(GoodsKey.getGoodDetail, "" + goodsId, html);
+        }
+        return html;
     }
 }
