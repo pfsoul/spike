@@ -6,8 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import top.soulblack.spike.common.CodeMsg;
+import top.soulblack.spike.common.Result;
 import top.soulblack.spike.model.Goods;
 import top.soulblack.spike.model.OrderInfo;
 import top.soulblack.spike.model.SpikeOrder;
@@ -40,29 +43,26 @@ public class SpikeController {
     qps 722.5
     5000 * 10
      */
-    @RequestMapping("/do_spike")
-    public String spike(Model model, SpikeUser user, @RequestParam("goodsId") long goodsId) {
+    @RequestMapping(value = "/do_spike",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<OrderInfo> spike(Model model, SpikeUser user, @RequestParam("goodsId") long goodsId) {
         if (user == null) {
-            return "login";
+            return Result.error(CodeMsg.NOT_LOGIN);
         }
         // 判断库存
         GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
         int stock = goods.getStockCount();
         if (stock <= 0) {
-            model.addAttribute("errmsg", CodeMsg.STOCK_EMPTY.getMsg());
-            return "spike_fail";
+            return Result.error(CodeMsg.STOCK_EMPTY);
         }
         // 判断是否已经秒杀到了
         SpikeOrder order = orderInfoService.getSpikeOrderByUserIdGoodsId(user.getId(), goodsId);
         if (order != null) {
-            model.addAttribute("errmsg", CodeMsg.REPEATE_SPIKE.getMsg());
-            return "spike_fail";
+            return Result.error(CodeMsg.REPEATE_SPIKE);
         }
         // 减库存，下订单，写入秒杀订单
         OrderInfo orderInfo = spikeService.spike(user, goods);
-        model.addAttribute("orderInfo", orderInfo);
-        model.addAttribute("goods", goods);
-        return "order_detail";
+        return Result.success(orderInfo);
     }
 
 }

@@ -3,7 +3,6 @@ package top.soulblack.spike.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import top.soulblack.spike.model.Goods;
 import top.soulblack.spike.model.OrderInfo;
 import top.soulblack.spike.model.SpikeUser;
 import top.soulblack.spike.model.vo.GoodsVo;
@@ -26,7 +25,6 @@ public class SpikeService {
     public OrderInfo spike(SpikeUser user, GoodsVo goods) {
         //减库存 下订单，写入秒杀订单
         spikeGoodsService.reduceStock(goods);
-        OrderInfo orderInfo = orderInfoService.createOrder(user, goods);
-        return orderInfo;
+        return orderInfoService.createOrder(user, goods);
     }
 }

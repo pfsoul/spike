@@ -43,10 +43,12 @@
         	<span id="spikeTip"></span>
         </td>
         <td>
-        	<form id="miaoshaForm" meod="post" action="/spike/do_spike">
-        		<button class="btn btn-primary btn-block" type="submit" id="buyButton">立即秒杀</button>
-        		<input type="hidden" name="goodsId" id="goodsId" />
-        	</form>
+        	<!--<form id="miaoshaForm" method="post" action="/spike/do_spike">-->
+        		<!--<button class="btn btn-primary btn-block" type="submit" id="buyButton" onclick="doSpike()">立即秒杀</button>-->
+        		<!--<input type="hidden" name="goodsId" id="goodsId" />-->
+        	<!--</form>-->
+            <button class="btn btn-primary btn-block" type="button" id="buyButton" onclick="doSpike()">立即秒杀</button>
+            <input type="hidden" name="goodsId" id="goodsId" />
         </td>
      </tr>
      <tr>  
@@ -69,6 +71,24 @@ $(function() {
     //countDown();
     getDetail();
 });
+function doSpike() {
+    $.ajax({
+        url:"/spike/do_spike",
+        type:"POST",
+        data:{
+            goodsId:$("#goodsId").val()
+        },
+        success:function (data) {
+            if (data.code == 1){
+                window.location.href = "/order_detail.htm?orderId="+data.data.id;
+            } else{
+                layer.msg(data.msg);
+            }
+        },error:function () {
+            layer.msg("客户端请求有误");
+        }
+    })
+}
 
 function getDetail() {
     var goodsId = g_getQueryString("goodsId");
@@ -116,6 +136,7 @@ function countDown(){
 	var timeout;
 	if(remainSeconds > 0){//秒杀还没开始，倒计时
 		$("#buyButton").attr("disabled", true);
+        $("#spikeTip").html("秒杀倒计时："+remainSeconds+"秒");
 		timeout = setTimeout(function() {
             $("#countDown").text(remainSeconds - 1);
             $("#remainSeconds").val(remainSeconds - 1);

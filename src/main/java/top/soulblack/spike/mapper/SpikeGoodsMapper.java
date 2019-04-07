@@ -18,6 +18,7 @@ public interface SpikeGoodsMapper {
 
     int updateByPrimaryKey(SpikeGoods record);
 
-    @Update("update spike_goods set stock_count = stock_count - 1 where goods_id = #{goodsId}")
-    int reduceStock(SpikeGoods g);
+    //@Update("update spike_goods set stock_count = stock_count - 1 where stock_count > 0 and goods_id = #{goodsId}")
+    @Update("update spike_goods set stock_count = stock_count - 1 where goods_id = #{goodsId} and stock_count > 0")
+    public int reduceStock(SpikeGoods g);
 }

@@ -8,6 +8,8 @@ import top.soulblack.spike.model.OrderInfo;
 import top.soulblack.spike.model.SpikeOrder;
 import top.soulblack.spike.model.SpikeUser;
 import top.soulblack.spike.model.vo.GoodsVo;
+import top.soulblack.spike.redis.RedisService;
+import top.soulblack.spike.redis.key.OrderKey;
 
 import java.util.Date;
 
@@ -22,8 +24,12 @@ public class OrderInfoService {
     @Autowired
     private OrderInfoMapper orderInfoMapper;
 
+    @Autowired
+    private RedisService redisService;
+
     public SpikeOrder getSpikeOrderByUserIdGoodsId(Long userId, long goodsId) {
-        return orderInfoMapper.getSpikeOrderByUserIdGoodsId(userId, goodsId);
+        return redisService.get(OrderKey.getSpikeOrderByUidGid, "" + userId + "_" + goodsId, SpikeOrder.class);
+        //return orderInfoMapper.getSpikeOrderByUserIdGoodsId(userId, goodsId);
     }
 
     @Transactional
@@ -38,12 +44,21 @@ public class OrderInfoService {
         orderInfo.setOrderChannel((byte) 1);
         orderInfo.setStatus((byte) 0);
         orderInfo.setUserId(user.getId());
+        // bug orderId 一直为1
         long orderId = orderInfoMapper.insert(orderInfo);
         SpikeOrder spikeOrder = new SpikeOrder();
         spikeOrder.setGoodsId(goods.getId());
         spikeOrder.setOrderId(orderId);
         spikeOrder.setUserId(user.getId());
         orderInfoMapper.insertSpikeOrder(spikeOrder);
+
+        redisService.set(OrderKey.getSpikeOrderByUidGid, "" + user.getId() + "_" + goods.getId(), spikeOrder);
+
         return orderInfo;
+    }
+
+
+    public OrderInfo getOrderById(long orderId) {
+        return orderInfoMapper.getOrderById(orderId);
     }
 }

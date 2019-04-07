@@ -22,6 +22,10 @@ public class CodeMsg {
     public static CodeMsg MOBILE_ERROR = new CodeMsg(500113, "手机号格式错误");
     public static CodeMsg MOBILE_NOT_EXIST = new CodeMsg(500114, "手机号码不存在");
     public static CodeMsg PASSWORD_ERROR = new CodeMsg(500115, "密码错误");
+    public static CodeMsg NOT_LOGIN = new CodeMsg(500116, "尚未登录请先登录");
+
+    // 订单模块
+    public static CodeMsg ORDER_NOT_EXIT = new CodeMsg(500400, "订单不存在");
 
     // 秒杀模块
     public static CodeMsg STOCK_EMPTY = new CodeMsg(500500, "商品库存不足，秒杀失败");
