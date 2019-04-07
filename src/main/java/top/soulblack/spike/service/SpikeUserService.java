@@ -33,9 +33,49 @@ public class SpikeUserService {
     private RedisService redisService;
 
     public SpikeUser getById(Long id) {
-        return spikeUserMapper.getById(id);
+        // 先取缓存
+        SpikeUser user = redisService.get(SpikeUserKey.getByID, "" + id, SpikeUser.class);
+        if (user == null) {
+            user = spikeUserMapper.getById(id);
+            if (user != null) {
+                redisService.set(SpikeUserKey.getByID, "" + id, user);
+            }
+        }
+        return user;
     }
 
+    /**
+     * 更新密码
+     * @param token
+     * @param id
+     * @param passwordNew
+     * @return
+     */
+    public boolean updatePassword(String token, long id, String passwordNew) {
+        // 取user
+        SpikeUser user = getById(id);
+        if (user == null) {
+            throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);
+        }
+        // 更新数据库
+        SpikeUser toBeUpdate = new SpikeUser();
+        toBeUpdate.setId(id);
+        toBeUpdate.setPassword(MD5Util.formPassToDBPass(passwordNew,user.getSalt()));
+        spikeUserMapper.updatePassword(toBeUpdate);
+        // 处理缓存
+        redisService.delete(SpikeUserKey.getByID, "" + id);
+        // 更新token
+        user.setPassword(toBeUpdate.getPassword());
+        redisService.set(SpikeUserKey.token, token, user);
+        return true;
+    }
+
+    /**
+     * 登录操作
+     * @param response
+     * @param loginVo
+     * @return
+     */
     public String login(HttpServletResponse response, LoginVo loginVo) {
         if (loginVo == null) {
             throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);

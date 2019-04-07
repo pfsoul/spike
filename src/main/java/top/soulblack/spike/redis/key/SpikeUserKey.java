@@ -17,5 +17,5 @@ public class SpikeUserKey extends BasePrefix {
     }
 
     public static SpikeUserKey token = new SpikeUserKey(TOKEN_EXPIRE, "tk");
-    public static SpikeUserKey getByName = new SpikeUserKey(TOKEN_EXPIRE, "name");
+    public static SpikeUserKey getByID = new SpikeUserKey(0, "id");  // 永久有效
 }

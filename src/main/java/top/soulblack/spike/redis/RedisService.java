@@ -94,6 +94,23 @@ public class RedisService {
     }
 
     /**
+     * 删除对应缓存
+     * @param keyPrefix
+     * @param key
+     * @return
+     */
+    public boolean delete(KeyPrefix keyPrefix, String key) {
+        Jedis jedis = null;
+        try {
+            jedis = jedisPool.getResource();
+            long ret = jedis.del(keyPrefix + key);
+            return ret > 0;
+        }finally {
+            returntoPool(jedis);
+        }
+    }
+
+    /**
      * key值加1，原子操作
      * @param keyPrefix
      * @param key
