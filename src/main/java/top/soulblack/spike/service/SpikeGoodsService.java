@@ -17,9 +17,11 @@ public class SpikeGoodsService {
     @Autowired
     private SpikeGoodsMapper spikeGoodsMapper;
 
-    public void reduceStock(GoodsVo goods) {
+
+    public boolean reduceStock(GoodsVo goods) {
         SpikeGoods g = new SpikeGoods();
         g.setGoodsId(goods.getId());
-        spikeGoodsMapper.reduceStock(g);
+        int ret = spikeGoodsMapper.reduceStock(g);
+        return ret > 0;
     }
 }

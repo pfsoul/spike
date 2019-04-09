@@ -45,10 +45,10 @@ public class OrderInfoService {
         orderInfo.setStatus((byte) 0);
         orderInfo.setUserId(user.getId());
         // bug orderId 一直为1
-        long orderId = orderInfoMapper.insert(orderInfo);
+        orderInfoMapper.insert(orderInfo);
         SpikeOrder spikeOrder = new SpikeOrder();
         spikeOrder.setGoodsId(goods.getId());
-        spikeOrder.setOrderId(orderId);
+        spikeOrder.setOrderId(orderInfo.getId());
         spikeOrder.setUserId(user.getId());
         orderInfoMapper.insertSpikeOrder(spikeOrder);
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.soulblack.spike.common.Result;
 import top.soulblack.spike.model.User;
+import top.soulblack.spike.rabbitmq.MQSender;
 import top.soulblack.spike.redis.RedisService;
 import top.soulblack.spike.redis.key.UserKey;
 import top.soulblack.spike.service.UserService;
@@ -29,6 +30,9 @@ public class HelloController {
     @Autowired
     private RedisService redisService;
 
+    @Autowired
+    private MQSender mqSender;
+
     @RequestMapping("/index")
     public String index(Model model) {
         model.addAttribute("name", "spike");
@@ -40,6 +44,37 @@ public class HelloController {
     public Result<User> getById() {
         User user = userService.getById(1);
         return Result.success(user);
+    }
+
+    /**
+     * 测试rabbitmq
+     */
+    @RequestMapping("/mq/headers")
+    @ResponseBody
+    public Result<String> headers() {
+        mqSender.headersSend("hello soulblack");
+        return Result.success("hello");
+    }
+
+    @RequestMapping("/mq/fanout")
+    @ResponseBody
+    public Result<String> fanout() {
+        mqSender.fanoutSend("hello soulblack");
+        return Result.success("hello");
+    }
+
+    @RequestMapping("/mq/topic")
+    @ResponseBody
+    public Result<String> topic() {
+        mqSender.topicSend("hello soulblack");
+        return Result.success("hello");
+    }
+
+    @RequestMapping("/mq")
+    @ResponseBody
+    public Result<String> mq() {
+        mqSender.send("hello soulblack");
+        return Result.success("hello");
     }
 
     /**
