@@ -133,6 +133,11 @@ function doSpike(path) {
 
 function getSpikePath() {
     g_showLoading();
+    var verifyCode = $("#verifyCode").val();
+    if ( verifyCode == "") {
+        layer.msg("请输入验证码");
+        return;
+    }
     $.ajax({
         url:"/spike/path",
         type:"GET",
@@ -152,7 +157,7 @@ function getSpikePath() {
         },error:function () {
             layer.msg("客户端请求有误");
         }
-    })
+    });
 }
 
 function getDetail() {

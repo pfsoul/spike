@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import top.soulblack.spike.common.CodeMsg;
 import top.soulblack.spike.common.Result;
+import top.soulblack.spike.interceptor.AccessLimit;
 import top.soulblack.spike.model.Goods;
 import top.soulblack.spike.model.OrderInfo;
 import top.soulblack.spike.model.SpikeOrder;
@@ -18,12 +19,10 @@ import top.soulblack.spike.rabbitmq.MQSender;
 import top.soulblack.spike.rabbitmq.SpikeMessage;
 import top.soulblack.spike.redis.RedisService;
 import top.soulblack.spike.redis.key.GoodsKey;
-import top.soulblack.spike.redis.key.SpikeKey;
 import top.soulblack.spike.service.GoodsService;
 import top.soulblack.spike.service.OrderInfoService;
 import top.soulblack.spike.service.SpikeService;
-import top.soulblack.spike.util.MD5Util;
-import top.soulblack.spike.util.UUIDUtil;
+
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
@@ -91,6 +90,7 @@ public class SpikeController implements InitializingBean {
         if (user == null) {
             return Result.error(CodeMsg.NOT_LOGIN);
         }
+
         // 验证path
         boolean check = spikeService.checkPath(path, user, goodsId);
         if (!check) {
@@ -146,12 +146,13 @@ public class SpikeController implements InitializingBean {
      * @param goodsId
      * @return
      */
+    @AccessLimit(seconds=5, maxCount=5, needLogin=true)
     @RequestMapping(value = "/path",method = RequestMethod.GET)
     @ResponseBody
     public Result<String> path(SpikeUser user,@RequestParam("goodsId") long goodsId, @RequestParam("verifyCode") int verifyCode) {
-        if (user == null) {
-            return Result.error(CodeMsg.NOT_LOGIN);
-        }
+//        if (user == null) {
+//            return Result.error(CodeMsg.NOT_LOGIN);
+//        }
         boolean check = spikeService.checkVerifyCode(user, goodsId, verifyCode);
         if (!check) {
             // 没通过验证

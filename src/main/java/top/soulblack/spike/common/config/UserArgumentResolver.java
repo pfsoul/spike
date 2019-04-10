@@ -53,33 +53,9 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
      */
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-        HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
-        HttpServletResponse response = webRequest.getNativeResponse(HttpServletResponse.class);
-        String paramToken = request.getParameter(SpikeUserService.COOKIE_NAME_TOKEN);
-        String cookieToken = getCookieValue(request, SpikeUserService.COOKIE_NAME_TOKEN);
-        if (StringUtils.isEmpty(cookieToken) && StringUtils.isEmpty(paramToken)) {
-            return null;
-        }
-        String token = StringUtils.isEmpty(paramToken) ? cookieToken : paramToken;
-        SpikeUser user = spikeUserService.getByToken(response, token);
-        return user;
+        return UserContext.getUser();
     }
 
-    /**
-     * 获取全部cookie，找到所需要的cookie
-     * @param request
-     * @param cookieName
-     * @return
-     */
-    private String getCookieValue(HttpServletRequest request, String cookieName) {
-        if (request.getCookies() == null || request.getCookies().length <= 0) {
-            return null;
-        }
-        for (Cookie cookie : request.getCookies()) {
-            if (cookie.getName().equals(cookieName)) {
-                return cookie.getValue();
-            }
-        }
-        return null;
-    }
+
+
 }
