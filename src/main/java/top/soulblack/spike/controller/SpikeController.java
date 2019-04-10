@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import top.soulblack.spike.common.CodeMsg;
 import top.soulblack.spike.common.Result;
 import top.soulblack.spike.model.Goods;
@@ -21,9 +18,12 @@ import top.soulblack.spike.rabbitmq.MQSender;
 import top.soulblack.spike.rabbitmq.SpikeMessage;
 import top.soulblack.spike.redis.RedisService;
 import top.soulblack.spike.redis.key.GoodsKey;
+import top.soulblack.spike.redis.key.SpikeKey;
 import top.soulblack.spike.service.GoodsService;
 import top.soulblack.spike.service.OrderInfoService;
 import top.soulblack.spike.service.SpikeService;
+import top.soulblack.spike.util.MD5Util;
+import top.soulblack.spike.util.UUIDUtil;
 
 import java.util.HashMap;
 import java.util.List;
@@ -79,11 +79,16 @@ public class SpikeController implements InitializingBean {
     qps 919.4
     5000 * 10
      */
-    @RequestMapping(value = "/do_spike",method = RequestMethod.POST)
+    @RequestMapping(value = "/{path}/do_spike", method = RequestMethod.POST)
     @ResponseBody
-    public Result<Integer> spike(SpikeUser user, @RequestParam("goodsId") long goodsId) {
+    public Result<Integer> spike(SpikeUser user, @RequestParam("goodsId") long goodsId, @PathVariable("path") String path) {
         if (user == null) {
             return Result.error(CodeMsg.NOT_LOGIN);
+        }
+        // 验证path
+        boolean check = spikeService.checkPath(path, user, goodsId);
+        if (!check) {
+            return Result.error(CodeMsg.REQUEST_ILLEGAL);
         }
         // 如果卖完则表示该商品卖完，即卖完以后均不访问redis
         boolean over = localOverMap.get(goodsId);
@@ -108,19 +113,6 @@ public class SpikeController implements InitializingBean {
         spikeMessage.setUser(user);
         mqSender.sendSpikeMessage(spikeMessage);
         return Result.success(0);  // 排队中
-//        // 判断库存
-//        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
-//        int stock = goods.getStockCount();
-//        if (stock <= 0) {
-//            return Result.error(CodeMsg.STOCK_EMPTY);
-//        }
-//        // 判断是否已经秒杀到了
-//        SpikeOrder order = orderInfoService.getSpikeOrderByUserIdGoodsId(user.getId(), goodsId);
-//        if (order != null) {
-//            return Result.error(CodeMsg.REPEATE_SPIKE);
-//        }
-//        // 减库存，下订单，写入秒杀订单
-//        OrderInfo orderInfo = spikeService.spike(user, goods);
     }
 
     /**
@@ -140,6 +132,16 @@ public class SpikeController implements InitializingBean {
         }
         long result = spikeService.getSpikeReesult(user.getId(), goodsId);
         return Result.success(result);
+    }
+
+    @RequestMapping(value = "/path",method = RequestMethod.GET)
+    @ResponseBody
+    public Result<String> path(SpikeUser user,@RequestParam("goodsId") long goodsId) {
+        if (user == null) {
+            return Result.error(CodeMsg.NOT_LOGIN);
+        }
+        String path = spikeService.createSpikePath(user, goodsId);
+        return Result.success(path);
     }
 
 

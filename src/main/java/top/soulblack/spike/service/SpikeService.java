@@ -11,6 +11,8 @@ import top.soulblack.spike.model.User;
 import top.soulblack.spike.model.vo.GoodsVo;
 import top.soulblack.spike.redis.RedisService;
 import top.soulblack.spike.redis.key.SpikeKey;
+import top.soulblack.spike.util.MD5Util;
+import top.soulblack.spike.util.UUIDUtil;
 
 /**
  * @Author: 廉雪峰
@@ -65,5 +67,32 @@ public class SpikeService {
 
     private boolean getGoodsOver(long goodsId) {
         return redisService.exist(SpikeKey.isGoodsOver, "" + goodsId);
+    }
+
+    /**
+     * 创造随机的秒杀路径
+     * @param user
+     * @param goodsId
+     * @return
+     */
+    public String createSpikePath(SpikeUser user, long goodsId) {
+        String str = MD5Util.md5(UUIDUtil.uuid() + "123456");
+        redisService.set(SpikeKey.getSpikePath, "" + user.getId() + "_" + goodsId, str);
+        return str;
+    }
+
+    /**
+     * 验证随机秒杀路径
+     * @param path
+     * @param user
+     * @param goodsId
+     * @return
+     */
+    public boolean checkPath(String path, SpikeUser user, long goodsId) {
+        if (user == null || path == null) {
+            return false;
+        }
+        String needPath = redisService.get(SpikeKey.getSpikePath, "" + user.getId() + "_" + goodsId, String.class);
+        return path.equals(needPath);
     }
 }
