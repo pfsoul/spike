@@ -47,7 +47,13 @@
         		<!--<button class="btn btn-primary btn-block" type="submit" id="buyButton" onclick="doSpike()">立即秒杀</button>-->
         		<!--<input type="hidden" name="goodsId" id="goodsId" />-->
         	<!--</form>-->
-            <button class="btn btn-primary btn-block" type="button" id="buyButton" onclick="getSpikePath()">立即秒杀</button>
+            <div class="row">
+                <div class="form-inline">
+                    <img id="verifyCodeImg" width="80px" height="32px" style="display: none" onclick="refreshVerifyCodeImg()"/>
+                    <input id="verifyCode" class="form-control" style="display: none">
+                    <button class="btn btn-primary" type="button" id="buyButton" onclick="getSpikePath()">立即秒杀</button>
+                </div>
+            </div>
             <input type="hidden" name="goodsId" id="goodsId" />
         </td>
      </tr>
@@ -131,13 +137,16 @@ function getSpikePath() {
         url:"/spike/path",
         type:"GET",
         data:{
-            goodsId:$("#goodsId").val()
+            goodsId:$("#goodsId").val(),
+            verifyCode:$("#verifyCode").val()
         },
         success:function (data) {
             if (data.code == 1){
                 var path = data.data;
                 doSpike(path);
             } else{
+                //验证失败则刷新验证码
+                $("#verifyCodeImg").attr("src", "/spike/verifyCode?goodsId=" + $("#goodsId").val() + "&timestamp=" + new Date().getTime());
                 layer.msg(data.msg);
             }
         },error:function () {
@@ -205,14 +214,23 @@ function countDown(){
             clearTimeout(timeout);
         }
         $("#miaoshaTip").html("秒杀进行中");
+        $("#verifyCodeImg").attr("src", "/spike/verifyCode?goodsId=" + $("#goodsId").val());
+        $("#verifyCodeImg").show();
+        $("#verifyCode").show();
 	}
     else
         {//秒杀已经结束
             $("#buyButton").attr("disabled", true);
             $("#miaoshaTip").html("秒杀已经结束");
+            $("#verifyCodeImg").hide();
+            $("#verifyCode").hide();
         }
 }
-	
+
+// 防止浏览器缓存加入时间戳
+function refreshVerifyCodeImg() {
+    $("#verifyCodeImg").attr("src", "/spike/verifyCode?goodsId=" + $("#goodsId").val() + "&timestamp=" + new Date().getTime());
+}
 
 
 </script>

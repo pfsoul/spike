@@ -25,6 +25,11 @@ import top.soulblack.spike.service.SpikeService;
 import top.soulblack.spike.util.MD5Util;
 import top.soulblack.spike.util.UUIDUtil;
 
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,6 +83,7 @@ public class SpikeController implements InitializingBean {
 
     qps 919.4
     5000 * 10
+    秒杀业务逻辑
      */
     @RequestMapping(value = "/{path}/do_spike", method = RequestMethod.POST)
     @ResponseBody
@@ -134,15 +140,50 @@ public class SpikeController implements InitializingBean {
         return Result.success(result);
     }
 
+    /**
+     * 获取随机路径 并验证验证码
+     * @param user
+     * @param goodsId
+     * @return
+     */
     @RequestMapping(value = "/path",method = RequestMethod.GET)
     @ResponseBody
-    public Result<String> path(SpikeUser user,@RequestParam("goodsId") long goodsId) {
+    public Result<String> path(SpikeUser user,@RequestParam("goodsId") long goodsId, @RequestParam("verifyCode") int verifyCode) {
         if (user == null) {
             return Result.error(CodeMsg.NOT_LOGIN);
+        }
+        boolean check = spikeService.checkVerifyCode(user, goodsId, verifyCode);
+        if (!check) {
+            // 没通过验证
+            return Result.error(CodeMsg.VERIFYCODE_ERROR);
         }
         String path = spikeService.createSpikePath(user, goodsId);
         return Result.success(path);
     }
 
+    /**
+     * 生成随机的图片验证码
+     * @param user
+     * @param goodsId
+     * @return
+     */
+    @RequestMapping(value = "/verifyCode",method = RequestMethod.GET)
+    @ResponseBody
+    public Result<String> verifyCode(HttpServletResponse response, SpikeUser user, @RequestParam("goodsId") long goodsId) {
+        if (user == null) {
+            return Result.error(CodeMsg.NOT_LOGIN);
+        }
+        BufferedImage image = spikeService.createVerifyCode(user, goodsId);
+        try {
+            OutputStream out = response.getOutputStream();
+            ImageIO.write(image, "jpeg", out);
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Result.error(CodeMsg.SERVER_ERROR);
+        }
+        return null;
+    }
 
 }
