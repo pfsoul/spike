@@ -1,9 +1,6 @@
 package top.soulblack.spike.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import top.soulblack.spike.model.SpikeUser;
 
 @Mapper
@@ -25,4 +22,7 @@ public interface SpikeUserMapper {
 
     @Update("update spike_user set password = #{password} where id = #{id}")
     void updatePassword(SpikeUser toBeUpdate);
+
+    @Insert("insert into spike_user (id, nickname, password, salt) values (#{id}, #{nickname}, #{password}, #{salt}) ")
+    int insertUser(SpikeUser record);
 }

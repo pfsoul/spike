@@ -98,7 +98,6 @@ public class SpikeUserService {
         String token = UUIDUtil.uuid();
         addCookie(response,token, user);
         return token;
-
     }
 
     /**
@@ -131,5 +130,38 @@ public class SpikeUserService {
         cookie.setMaxAge(SpikeUserKey.token.expireSeconds());
         cookie.setPath("/");
         response.addCookie(cookie);
+    }
+
+    /**
+     * 注册账号
+     * @param response
+     * @param loginVo
+     * @return
+     */
+    public String register(HttpServletResponse response, LoginVo loginVo) {
+        if (loginVo == null) {
+            throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);
+        }
+        // 参数校验
+        String mobile = loginVo.getMobile();
+        String formpass = loginVo.getPassword();
+        SpikeUser user = getById(Long.parseLong(mobile));
+        if (user != null) {
+            throw new GlobalException(CodeMsg.MOBILE_EXIST);
+        }
+        // 注册账号
+        user = new SpikeUser();
+        user.setPassword(formpass);
+        user.setId(Long.parseLong(mobile));
+        user.setNickname("测试账号");
+        user.setSalt(MD5Util.SALT);
+        System.out.println(user.toString());
+        spikeUserMapper.insertUser(user);
+        // 添加缓存
+        redisService.set(SpikeUserKey.getByID, "" + user.getId(), user);
+        // 生成一个cookie
+        String token = UUIDUtil.uuid();
+        addCookie(response,token, user);
+        return token;
     }
 }

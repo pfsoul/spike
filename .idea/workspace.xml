@@ -2,154 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e05a27-f34f-4205-a988-1e15bb70c1b6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/UserContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessLimit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/AccessKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/spike.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/IndexKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/com/bottom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/com/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/CodeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/UserArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/UserArgumentResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/SpikeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/SpikeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/SpikeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/SpikeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/util/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/util/UserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/soulblack/spike/util/UserUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/goods_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/SpikeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/SpikeApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/CodeMsg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/Result.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/config/UserArgumentResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/config/UserArgumentResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/config/UserContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/config/UserContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/exception/GlobalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/exception/GlobalException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/common/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/SpikeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/controller/SpikeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/interceptor/AccessInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/interceptor/AccessInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/GoodsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/GoodsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/OrderInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/OrderInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/SpikeGoodsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/SpikeGoodsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/SpikeOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/SpikeOrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/SpikeUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/SpikeUserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/OrderInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/OrderInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/SpikeGoods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/SpikeGoods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/SpikeOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/SpikeOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/SpikeUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/SpikeUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/GoodsDetailVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/GoodsDetailVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/GoodsVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/GoodsVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/LoginVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/LoginVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/OrderVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/model/vo/OrderVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/rabbitmq/MQReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/rabbitmq/MQReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/rabbitmq/MQSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/rabbitmq/MQSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/rabbitmq/SpikeMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/rabbitmq/SpikeMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/RedisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/RedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/RedisService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/AccessKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/AccessKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/GoodsKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/GoodsKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/OrderKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/OrderKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/SpikeKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/SpikeKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/SpikeUserKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/SpikeUserKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/UserKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/UserKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/base/BasePrefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/redis/key/base/BasePrefix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/GoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/GoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/OrderInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/OrderInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/SpikeGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/SpikeGoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/SpikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/SpikeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/SpikeUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/SpikeUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/IsMobileValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/IsMobileValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/MD5Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/UserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/UserUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/ValidatorUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/soulblack/spike/util/ValidatorUtil.class" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CodeMsg.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/CodeMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="goods_detail.htm" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/goods_detail.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="135" column="44" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#3;n#tr#2;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#td#3;n#tr#2;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpikeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/SpikeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-107">
-              <caret line="154" column="11" selection-start-line="154" selection-start-column="11" selection-end-line="154" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/exception/GlobalException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoodsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/GoodsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalExceptionHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/exception/GlobalExceptionHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccessLimit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessLimit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/WebConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-              <folding>
-                <element signature="e#851#852#0" expanded="true" />
-                <element signature="e#874#875#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccessInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="890">
-              <caret line="77" column="63" selection-start-line="77" selection-start-column="63" selection-end-line="77" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccessKey.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/AccessKey.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#260#261#0" expanded="true" />
-                <element signature="e#304#305#0" expanded="true" />
-                <element signature="e#435#436#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="AnnotationType" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -170,246 +108,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$/../spring-framework-master" value="PREVIEW" />
-      </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/xml/GoodsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/xml/SpikeGoodsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/xml/SpikeOrderMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/xml/SpikeUserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/Goods.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeOrderMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/vo/GoodsVo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/goods_detail.html" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/GoodsMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/GoodsService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/order_detail.html" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/xml/OrderInfoMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/SpikeUserKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeUserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/common.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/vo/GoodsDetailVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/GoodsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/vo/OrderVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/OrderController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/OrderKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/OrderInfoMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/SpikeApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeGoodsMapper.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/HelloController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/GoodsKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/SpikeMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/MQSender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/MQReceiver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeGoodsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/OrderInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/MQConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/util/UserUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/RedisService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/order_detail.htm" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/SpikeKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/CodeMsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/AccessLimit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/UserContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/UserArgumentResolver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/AccessKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessLimit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/SpikeController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="596" />
-    <option name="y" value="112" />
-    <option name="width" value="1264" />
-    <option name="height" value="807" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <hideEmptyPackages ProjectPane="false" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="soulblack" type="462c0819:PsiDirectoryNode" />
-              <item name="spike" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
-              <item name="key" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Spike" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spike" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1a9BeDbKtzuCxTeoRTn3a87CFsp" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -417,8 +119,10 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -438,19 +142,7 @@
       <recent name="E:\javaweb\Spike\src\main\java\top\soulblack\spike\mapper\xml" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.SpikeApplication">
+  <component name="RunManager" selected="Spring Boot.SpikeApplication (1)">
     <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.soulblack.spike.util.MD5Util" />
       <module name="Spike" />
@@ -461,6 +153,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="SpikeService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.soulblack.spike.service.SpikeService" />
@@ -472,6 +167,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="UserUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.soulblack.spike.util.UserUtil" />
@@ -483,36 +181,38 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-    </configuration>
-    <configuration name="ValidatorUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.soulblack.spike.util.ValidatorUtil" />
-      <module name="Spike" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="top.soulblack.spike.interceptor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpikeApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="spike" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.soulblack.spike.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.soulblack.spike.SpikeApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="SpikeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Spike" />
@@ -523,43 +223,33 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="top.soulblack.spike.SpikeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
+    <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.SpikeApplication" />
       <item itemvalue="Application.MD5Util" />
-      <item itemvalue="Application.ValidatorUtil" />
       <item itemvalue="Application.UserUtil" />
       <item itemvalue="Application.SpikeService" />
+      <item itemvalue="Spring Boot.SpikeApplication" />
+      <item itemvalue="Spring Boot.SpikeApplication (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.SpikeApplication (1)" />
         <item itemvalue="Spring Boot.SpikeApplication" />
         <item itemvalue="Application.SpikeService" />
         <item itemvalue="Application.UserUtil" />
         <item itemvalue="Application.MD5Util" />
-        <item itemvalue="Application.ValidatorUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -592,505 +282,59 @@
       <workItem from="1554687326573" duration="8990000" />
       <workItem from="1554772459840" duration="17067000" />
       <workItem from="1554859413950" duration="15041000" />
+      <workItem from="1586138027670" duration="10621000" />
+      <workItem from="1586306301478" duration="20034000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140841000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32900432" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19480519" />
-      <window_info anchor="bottom" id="Spring" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22547974" />
-      <window_info anchor="right" id="Bean Validation" order="3" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="2" />
-    </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-          <folding>
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/vo/GoodsDetailVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/goods_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/goods_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="47" column="61" lean-forward="true" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/vo/OrderVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/util/DBUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/GoodsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="31" column="168" selection-start-line="31" selection-start-column="168" selection-end-line="31" selection-end-column="168" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" selection-start-line="23" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeOrderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeGoodsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/Queue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2090">
-          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/SpikeUserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="86" column="59" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/mapper/OrderInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeGoodsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/SpikeMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/MQSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/MQConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-            <element signature="e#1554#1555#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1722#1723#0" expanded="true" />
-            <element signature="e#1673#1674#0" expanded="true" />
-            <element signature="e#1694#1695#0" expanded="true" />
-            <element signature="e#1941#1942#0" expanded="true" />
-            <element signature="e#2019#2020#0" expanded="true" />
-            <element signature="e#1998#1999#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-            <element signature="e#2227#2228#0" expanded="true" />
-            <element signature="e#2423#2439#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/OrderInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.1/jedis-2.9.1.jar!/redis/clients/jedis/Jedis.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="241" column="16" selection-start-line="241" selection-start-column="16" selection-end-line="241" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/SpikeUserKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/OrderKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/base/KeyPrefix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/UserKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/base/BasePrefix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/util/UserUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/rabbitmq/MQReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/model/OrderInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/SpikeApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/RedisService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/SpikeKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/order_detail.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="196" column="27" selection-start-line="196" selection-start-column="27" selection-end-line="196" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1722#1723#0" expanded="true" />
-            <element signature="e#1796#1797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/GoodsKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/service/SpikeUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/UserContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding>
-            <element signature="e#253#264#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/UserArgumentResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/redis/key/AccessKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessLimit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-          <folding>
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/interceptor/AccessInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="890">
-          <caret line="77" column="63" selection-start-line="77" selection-start-column="63" selection-end-line="77" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/CodeMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/exception/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/common/exception/GlobalException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/SpikeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107">
-          <caret line="154" column="11" selection-start-line="154" selection-start-column="11" selection-end-line="154" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/soulblack/spike/controller/GoodsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/goods_detail.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="135" column="44" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#3;n#tr#2;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#td#3;n#tr#2;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="414" y="157" width="1345" height="754" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586307361394">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="157" width="1345" height="754" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586307361394" />
+    <state x="677" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1586316485352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586316485352" />
+    <state width="1854" height="291" key="GridCell.Tab.0.bottom" timestamp="1586331789545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789545" />
+    <state width="1854" height="291" key="GridCell.Tab.0.center" timestamp="1586331789545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789545" />
+    <state width="1854" height="291" key="GridCell.Tab.0.left" timestamp="1586331789545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789545" />
+    <state width="1854" height="291" key="GridCell.Tab.0.right" timestamp="1586331789545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789545" />
+    <state width="1854" height="291" key="GridCell.Tab.1.bottom" timestamp="1586331789546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789546" />
+    <state width="1854" height="291" key="GridCell.Tab.1.center" timestamp="1586331789546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789546" />
+    <state width="1854" height="291" key="GridCell.Tab.1.left" timestamp="1586331789546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789546" />
+    <state width="1854" height="291" key="GridCell.Tab.1.right" timestamp="1586331789546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="291" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586331789546" />
+    <state x="506" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1586306501673">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="506" y="270" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586306501673" />
   </component>
   <component name="masterDetails">
     <states>

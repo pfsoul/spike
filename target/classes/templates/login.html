@@ -1,94 +1,127 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>登录</title>
-    <!-- jquery -->
-    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
-    <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
-    <script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
-    <!-- jquery-validator -->
-    <script type="text/javascript" th:src="@{/jquery-validation/jquery.validate.min.js}"></script>
-    <script type="text/javascript" th:src="@{/jquery-validation/localization/messages_zh.min.js}"></script>
-    <!-- layer -->
-    <script type="text/javascript" th:src="@{/layer/layer.js}"></script>
-    <!-- md5.js -->
-    <script type="text/javascript" th:src="@{/js/md5.min.js}"></script>
-    <!-- common.js -->
-    <script type="text/javascript" th:src="@{/js/common.js}"></script>
-</head>
+	<div id="head" th:include="com/head :: common_head"></div>
+</head><!--/head-->
+
 <body>
-<form name="loginForm" id="loginForm" method="post"  style="width:50%; margin:0 auto">
 
-    <h2 style="text-align:center; margin-bottom: 20px">用户登录</h2>
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Login to your account</h2>
+						<form name="loginForm" id="loginForm" method="post">
+							<input id="mobile" name = "mobile" required="true" type="text" placeholder="请输入手机号码" />
+							<input id="password" name="password" type="password"  required="true" placeholder="请输入密码" />
+							<span>
+								<input type="checkbox" class="checkbox">
+								Keep me signed in
+							</span>
+							<button type="submit" onclick="login()" class="btn btn-default">Login</button>
+						</form>
+					</div><!--/login form-->
+				</div>
+				<div class="col-sm-1">
+					<h2 class="or">OR</h2>
+				</div>
+				<div class="col-sm-4">
+					<div class="signup-form"><!--sign up form-->
+						<h2>New User Signup!</h2>
+						<form name="signUp" id="signUp" method="post" >
+							<input id="reg_mobile" name="reg_mobile" type="text" placeholder="请输入手机号码"/>
+							<input id="reg_password" name="reg_password" type="password" placeholder="请输入你的密码"/>
+							<input id="repeat" name="repeat" type="password" placeholder="再次确认你的密码"/>
+							<button type="submit" onclick="Register()" class="btn btn-default">Signup</button>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+	<script>
 
-    <div class="form-group">
-        <div class="row">
-            <label class="form-label col-md-4">请输入手机号码</label>
-            <div class="col-md-5">
-                <input id="mobile" name = "mobile" class="form-control" type="text" placeholder="手机号码" required="true"  minlength="11" maxlength="11" />
-            </div>
-            <div class="col-md-1">
-            </div>
-        </div>
-    </div>
+	</script>
+	
+	<div id="bottom" th:include="com/bottom :: common_bottom"></div>
 
-    <div class="form-group">
-        <div class="row">
-            <label class="form-label col-md-4">请输入密码</label>
-            <div class="col-md-5">
-                <input id="password" name="password" class="form-control" type="password"  placeholder="密码" required="true" minlength="6" maxlength="16" />
-            </div>
-        </div>
-    </div>
+	<script>
+		function login() {
+			$("#loginForm").validate({
+				submitHandler:function(form){
+					doLogin();
+				}
+			});
+		}
+		function doLogin() {
+			alert("yes2");
+			g_showLoading();
+			var inputPass = $("#password").val();
+			var salt = g_passsword_salt;
+			var str = "" + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(3);
+			var password = md5(str);
+			$.ajax({
+				url: "/login/do_login",
+				type: "POST",
+				data:{
+					mobile:$("#mobile").val(),
+					password:password
+				},
+				success:function (data) {
+					layer.closeAll();
+					if (data.code == 1) {
+						layer.msg("成功");
+						window.location.href = "/goods/to_list";
+					} else {
+						layer.msg(data.msg);
+					}
+				},
+				error:function () {
+					layer.closeAll();
+				}
+			})
+		}
+		function Register() {
+			$("#signUp").validate({
+				submitHandler:function (form) {
+					doRegister();
+				}
+			});
 
-    <div class="row">
-        <div class="col-md-5">
-            <button class="btn btn-primary btn-block" type="reset" onclick="reset()">重置</button>
-        </div>
-        <div class="col-md-5">
-            <button class="btn btn-primary btn-block" type="submit" onclick="login()">登录</button>
-        </div>
-    </div>
-
-</form>
-
+		}
+		function doRegister() {
+			g_showLoading();
+			var inputPass = $("#reg_password").val();
+			var repeat = $("#repeat").val();
+			if(inputPass != repeat){
+				layer.msg("两次密码不匹配");
+				return;
+			}
+			var salt = g_passsword_salt;
+			var str = "" + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(3);
+			var password = md5(str);
+			$.ajax({
+				url: "/login/do_register",
+				type: "POST",
+				data:{
+					mobile:$("#reg_mobile").val(),
+					password:password
+				},
+				success:function (data) {
+					layer.closeAll();
+					if (data.code == 1) {
+						layer.msg("注册成功");
+						window.location.href = "/goods/to_list";
+					} else {
+						layer.msg(data.msg);
+					}
+				},
+				error:function () {
+					layer.closeAll();
+				}
+			})
+		}
+	</script>
 </body>
-<script>
-    function login() {
-        $("#loginForm").validate({
-            submitHandler:function(form){
-                doLogin();
-            }
-        });
-    }
-    function doLogin() {
-        g_showLoading();
-        var inputPass = $("#password").val();
-        var salt = g_passsword_salt;
-        var str = "" + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(3);
-        var password = md5(str);
-        $.ajax({
-            url: "/login/do_login",
-            type: "POST",
-            data:{
-                mobile:$("#mobile").val(),
-                password:password
-            },
-            success:function (data) {
-                layer.closeAll();
-                if (data.code == 1) {
-                    layer.msg("成功");
-                    window.location.href = "/goods/to_list";
-                } else {
-                    layer.msg(data.msg);
-                }
-            },
-            error:function () {
-                layer.closeAll();
-            }
-        })
-    }
-</script>
 </html>

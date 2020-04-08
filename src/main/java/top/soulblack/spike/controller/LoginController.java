@@ -4,13 +4,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import top.soulblack.spike.common.CodeMsg;
 import top.soulblack.spike.common.Result;
+import top.soulblack.spike.common.config.UserContext;
 import top.soulblack.spike.model.vo.LoginVo;
 import top.soulblack.spike.service.SpikeUserService;
-import top.soulblack.spike.util.ValidatorUtil;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -31,7 +31,8 @@ public class LoginController {
     private SpikeUserService spikeUserService;
 
     @RequestMapping("/to_login")
-    public String toLogin() {
+    public String toLogin(Model model) {
+        model.addAttribute("user", UserContext.getUser());
         return "login";
     }
 
@@ -41,6 +42,15 @@ public class LoginController {
         log.info(loginVo.toString());
         // 登录
         String token = spikeUserService.login(response, loginVo);
+        return Result.success(token);
+    }
+
+    @RequestMapping("/do_register")
+    @ResponseBody
+    public Result<String> doRegister(HttpServletResponse response, @Valid LoginVo loginVo){
+        log.info(loginVo.toString());
+        //注册
+        String token = spikeUserService.register(response, loginVo);
         return Result.success(token);
     }
 }

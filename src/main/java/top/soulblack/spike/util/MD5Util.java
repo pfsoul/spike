@@ -13,7 +13,7 @@ public class MD5Util {
         return DigestUtils.md5Hex(src);
     }
 
-    private static final String SALT = "lian1998";
+    public static final String SALT = "lian1998";
 
     public static String inputPassToFormPass(String inputPass) {
         String str = "" + SALT.charAt(0) + SALT.charAt(2) + inputPass + SALT.charAt(5) + SALT.charAt(3);

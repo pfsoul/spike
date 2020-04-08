@@ -24,6 +24,7 @@ public class CodeMsg {
     public static CodeMsg MOBILE_EMPTY = new CodeMsg(500112, "手机号不能为空");
     public static CodeMsg MOBILE_ERROR = new CodeMsg(500113, "手机号格式错误");
     public static CodeMsg MOBILE_NOT_EXIST = new CodeMsg(500114, "手机号码不存在");
+    public static final CodeMsg MOBILE_EXIST = new CodeMsg(500117,"手机号码已经存在");
     public static CodeMsg PASSWORD_ERROR = new CodeMsg(500115, "密码错误");
     public static CodeMsg NOT_LOGIN = new CodeMsg(500116, "尚未登录请先登录");
 

@@ -16,6 +16,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import top.soulblack.spike.mapper.SpikeUserMapper;
 import top.soulblack.spike.model.SpikeUser;
 
 
@@ -100,4 +101,5 @@ public class UserUtil {
 	public static void main(String[] args)throws Exception {
 		createUser(5000);
 	}
+
 }

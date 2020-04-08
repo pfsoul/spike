@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <footer th:fragment="common_head">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>登录</title>
+        <!-- jquery -->
+        <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Login | E-Shop</title>
+        <link th:href="@{/eshop/css/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/eshop/css/font-awesome.min.css}" rel="stylesheet">
+        <link th:href="@{/eshop/css/prettyPhoto.css}" rel="stylesheet">
+        <link th:href="@{/eshop/css/price-range.css}" rel="stylesheet">
+        <link th:href="@{/eshop/css/animate.css}" rel="stylesheet">
+        <link th:href="@{/eshop/css/main.css}" rel="stylesheet">
+        <link th:href="@{/eshop/css/responsive.css}" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script type="text/javascript" th:src="@{/eshop/js/html5shiv.js}"></script>
+        <script type="text/javascript" th:src="@{/eshop/js/respond.min.js}"></script>
+        <![endif]-->
+        <link rel="shortcut icon" th:href="@{/eshop/images/ico/favicon.ico}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" th:href="@{/eshop/images/ico/apple-touch-icon-144-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" th:href="@{/eshop/images/ico/apple-touch-icon-114-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" th:href="@{/eshop/images/ico/apple-touch-icon-72-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" th:href="@{/eshop/images/ico/apple-touch-icon-57-precomposed.png}">
+        <body>
+            <header id="header"><!--header-->
+                <div class="header_top"><!--header_top-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="contactinfo">
+                                    <ul class="nav nav-pills">
+                                        <li><a href=""><i class="fa fa-phone"></i> +86 123 4567 8910</a></li>
+                                        <li><a href=""><i class="fa fa-envelope"></i> work@hotmail.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="social-icons pull-right">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/header_top-->
+
+                <div class="header-middle"><!--header-middle-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="logo pull-left">
+                                    <a href="index.html"><span>E</span>-Shop</a>
+                                </div>
+                                <div class="btn-group pull-right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                            CHINA
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="">Canada</a></li>
+                                            <li><a href="">UK</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                            ￥
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="">Canadian Dollar</a></li>
+                                            <li><a href="">Pound</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="shop-menu pull-right">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href=""><i class="fa fa-user"></i> Account</a></li>
+                                        <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+                                        <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                        <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                        <li th:if="${user eq null}"><a href="login/to_login" class="active"><i class="fa fa-lock"></i> Login</a></li>
+                                        <li th:if="${user ne null}"><a href="/goods/to_list" class="active" th:text="${user.nickname}"><i class="fa fa-lock"></i> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/header-middle-->
+
+                <div class="header-bottom"><!--header-bottom-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="mainmenu pull-left">
+                                    <ul class="nav navbar-nav collapse navbar-collapse">
+                                        <li><a th:href="@{/index}">Home</a></li>
+                                        <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                            <ul role="menu" class="sub-menu">
+                                                <li><a th:href="@{/goods/to_list}">秒杀商品</a></li>
+                                                <li><a href="product-details.html">Product Details</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="cart.html">Cart</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                            <ul role="menu" class="sub-menu">
+                                                <li><a href="blog.html">Blog List</a></li>
+                                                <li><a href="blog-single.html">Blog Single</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="contact-us.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="search_box pull-right">
+                                    <input type="text" placeholder="Search"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/header-bottom-->
+            </header><!--/header-->
+        </body>
+    </footer>
+</head>
+<body>
+
+</body>
+</html>
